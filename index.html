@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Navigator</title>
+
+
+
+  <!-- Your script -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+  <!-- ✅ Fixed Navbar -->
+  <div class="main ">
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Logo" class="logo">
+        <h1>Campus Navigator</h1>
+      </div>
+
+      <div class="nav-right" id="navLinks">
+        <a id="chatBtn" href="#map">chat</a>
+        <a id="addspot" href="#info-panel">Add Spot</a>
+        <a id="eventBtn" href="#">Events</a>
+        <a href="#">About</a>
+      </div>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </nav>
+
+
+    <main>
+      <div class="right">
+        <div id="map"></div>
+
+        <div id="info-panel">
+          <h2>Add New Spot / Event</h2>
+          <form id="spotForm">
+            <input type="text" id="spotName" placeholder="Spot Name" required />
+            <textarea id="spotDesc" placeholder="Description" required></textarea>
+            <input type="text" id="latitude" placeholder="Latitude" readonly />
+            <input type="text" id="longitude" placeholder="Longitude" readonly />
+
+            <div class="btn-group">
+              <button type="submit">Add Spot</button>
+              <button type="button" id="setStartBtn">Set Start</button>
+              <button type="button" id="setEndBtn">Set End</button>
+              <button type="button" id="showRouteBtn">Show Route</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+      <div class="left">
+        <div id="imagePanel" class="hidden">
+          <h3 id="panelTitle">Spot Images</h3>
+          <div id="imageList"></div>
+        </div>
+        <!-- 📅 EVENTS PANEL -->
+        <div id="eventPanel" class="hidden">
+          <h3>🎉 Campus Events</h3>
+
+          <div id="eventList"></div>
+
+          <h4>Add New Event</h4>
+          <form id="eventForm">
+            <input type="text" id="eventName" placeholder="Event Name" required />
+            <textarea id="eventDesc" placeholder="Event Description" required></textarea>
+            <button type="submit">Add Event</button>
+          </form>
+        </div>
+
+        <!-- 💬 CHAT PANEL -->
+        <div id="chatPanel" class="hidden">
+          <h3>💬 Campus Chatbot</h3>
+
+          <div id="chatBox"></div>
+
+          <form id="chatForm">
+            <input type="text" id="chatInput" placeholder="Ask me something..." required />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
+        <!-- Add Chat Button to Navbar -->
+        <button id="chatBtn">Chat</button>
+
+
+
+
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Leaflet Routing Machine -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+  <!-- Your script -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
